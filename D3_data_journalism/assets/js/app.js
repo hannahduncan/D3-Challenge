@@ -43,7 +43,7 @@ function processData(data) {
 
     // Create xScale
     var xScale = d3.scaleLinear()
-        .domain([5, d3.max(poverty)])
+        .domain([8, d3.max(poverty)])
         .range([0,chartWidth]);
     
     // Create yScale
@@ -80,16 +80,19 @@ function processData(data) {
         .attr("class","stateText")
         .attr("x", d => xScale(d.poverty))
         .attr("y", d => yScale(d.healthcareLow) + 5)
- 
+    
+    // Create tooltip object
     var tooltip = d3.tip()
         .attr("class", "tooltip")
         .offset([10,-10])
         .html(function(d) {
             return (`State: ${d.state} </br> Poverty Rate: ${d.poverty}% </br> Lacks Healthcare: ${d.healthcareLow}%`)
         })
-    
+
+    // Call tooltip
     chartGroup.call(tooltip);
     
+    // Create event listeners
     circles.on("mouseover", function(d) {
         tooltip.show(d, this)
     })
