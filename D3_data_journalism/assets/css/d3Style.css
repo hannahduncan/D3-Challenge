@@ -1,3 +1,14 @@
+h1 {
+  text-decoration: underline;
+  text-align: center;
+  font-family: "Courier New";
+}
+
+.article {
+  font-family: "Courier New";
+  text-align: center;
+}
+
 .aText {
   font-family: sans-serif;
   font-size: 16px;
@@ -51,6 +62,20 @@
   text-transform: capitalize;
   background: rgba(0, 0, 0, 0.8);
   border-radius: 4px;
+}
+
+.tooltip {
+  position: absolute;
+  width: 15;
+  height: 10;
+  padding: 10px;
+  font: sans-serif;
+  font-size: 10px;
+  text-align: center;
+  color: white;
+  background: grey;
+  border: 0;
+  border-radius: 10px;
 }
 
 /* Mobile Rules */
